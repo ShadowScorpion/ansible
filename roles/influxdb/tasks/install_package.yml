@@ -1,0 +1,11 @@
+---
+# ./roles/influxdb/tasks/install_package.yml
+
+- name: Install InfluxDB
+  become: yes
+  become_user: root
+  become_method: su
+  yum: name=influxdb state=installed
+  tags:
+    - install_influxdb
+

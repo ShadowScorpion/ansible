@@ -1,0 +1,26 @@
+---
+# ./roles/influxdb/tasks/service.yml
+
+- name: Start influxdb service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=influxdb state=started
+  tags:
+    - start_influxdb
+
+- name: Stop influxdb service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=influxdb state=stopped
+  tags:
+    - stop_influxdb
+
+- name: Restart influxdb service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=influxdb state=restarted
+  tags:
+    - restart_influxdb

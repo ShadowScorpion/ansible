@@ -1,0 +1,4 @@
+---
+- include: adding_repo.yml
+- include: install_package.yml
+- include: service.yml
