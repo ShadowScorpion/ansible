@@ -7,5 +7,6 @@
   become_method: su
   yum: name=influxdb state=installed
   tags:
+    - influxdb
     - install_influxdb
 

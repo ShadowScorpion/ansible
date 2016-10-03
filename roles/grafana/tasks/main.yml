@@ -1,0 +1,3 @@
+---
+- include: install_grafana.yml
+- include: service.yml

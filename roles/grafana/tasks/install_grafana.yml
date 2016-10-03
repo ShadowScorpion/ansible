@@ -1,0 +1,24 @@
+---
+# ./roles/grafana/tasks/service.yml
+
+- name: install additional tools
+  become: yes
+  become_user: root
+  become_method: su
+  yum: name={{ item }} state=installed
+  with_items:
+    - initscripts
+    - fontconfig
+  tags:
+    - grafana
+    - install_additional_tools
+
+
+- name: download and install grafana (v3.1.1)
+  become: yes
+  become_user: root
+  become_method: su
+  yum: name={{ install_grafana.url }} state=present
+  tags:
+    - grafana
+    - install_grafana

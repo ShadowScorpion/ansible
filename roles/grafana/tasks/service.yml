@@ -1,0 +1,26 @@
+---
+# ./roles/grafana/tasks/service.yml
+
+- name: Start grafana service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=grafana-server state=started
+  tags:
+    - start_grafana
+
+- name: Stop grafana service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=grafana-server state=stopped
+  tags:
+    - stop_grafana
+
+- name: Restart grafana service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=grafana-server state=restarted
+  tags:
+    - restart_grafana

@@ -7,6 +7,7 @@
   become_method: su
   service: name=telegraf state=started
   tags:
+    - telegraf
     - start_telegraf
 
 - name: Stop telegraf service
@@ -15,6 +16,7 @@
   become_method: su
   service: name=telegraf state=stopped
   tags:
+    - telegraf
     - stop_telegraf
 
 - name: Restart telegraf service
@@ -23,4 +25,5 @@
   become_method: su
   service: name=telegraf state=restarted
   tags:
+    - telegraf
     - restart_telegraf

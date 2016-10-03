@@ -7,4 +7,5 @@
   become_method: su
   template: src={{role_path}}/templates/influxdb.repo.j2 dest={{ adding_repo.repo_path }}influxdb.repo
   tags:
+    - telegraf
     - adding_repo
