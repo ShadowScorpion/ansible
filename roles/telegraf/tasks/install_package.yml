@@ -1,0 +1,11 @@
+---
+# ./roles/telegraf/tasks/install_package.yml
+
+- name: Install Telegraf
+  become: yes
+  become_user: root
+  become_method: su
+  yum: name=telegraf state=installed
+  tags:
+    - install_telegraf
+

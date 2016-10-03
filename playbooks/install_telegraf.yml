@@ -1,0 +1,6 @@
+---
+- name: Installing Telegraf
+  hosts: all
+  remote_user: kskrypnyk
+  roles: 
+  - telegraf

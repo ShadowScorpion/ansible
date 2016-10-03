@@ -1,0 +1,26 @@
+---
+# ./roles/telegraf/tasks/service.yml
+
+- name: Start telegraf service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=telegraf state=started
+  tags:
+    - start_telegraf
+
+- name: Stop telegraf service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=telegraf state=stopped
+  tags:
+    - stop_telegraf
+
+- name: Restart telegraf service
+  become: yes
+  become_user: root
+  become_method: su
+  service: name=telegraf state=restarted
+  tags:
+    - restart_telegraf
